@@ -14,13 +14,15 @@ jobs:
         uses: actions/checkout@v4
 
       - name: JDK 17 Kur
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: "17"
           distribution: temurin
 
-      - name: Gradle Kur
+      - name: Gradle 8.2 Kur
         uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.2"
 
       - name: APK Derle
         run: gradle assembleDebug
